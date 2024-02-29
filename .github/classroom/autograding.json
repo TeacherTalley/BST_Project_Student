@@ -1,0 +1,224 @@
+{
+  "tests": [
+    {
+      "name": "AutoTest Setup",
+      "setup": "git clone https://github.com/TeacherTalley/BST_Project_AutoTest.git",
+      "run": "cd BST_Project_AutoTest && ./AutoTest_setup.sh",
+      "input": null,
+      "output": null,
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 0
+    },
+    {
+      "name": "Coding Style",
+      "setup": "",
+      "run": "./BST_Project_AutoTest/AutoTest_Style.sh",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 5
+    },
+    {
+      "name": "Test Exit",
+      "setup": "",
+      "run": "./BST_Project_AutoTest/AutoTest_OutputTest.py -t test_exit",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 5
+    },
+    {
+      "name": "Test Search",
+      "setup": "",
+      "run": "./BST_Project_AutoTest/AutoTest_OutputTest.py -t test_search",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 10
+    },
+    {
+      "name": "Test Search Not Found",
+      "setup": "",
+      "run": "./BST_Project_AutoTest/AutoTest_OutputTest.py -t test_search_not_found",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 10
+    },
+    {
+      "name": "Test Add",
+      "setup": "",
+      "run": "./BST_Project_AutoTest/AutoTest_OutputTest.py -t test_add",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 15
+    },
+    {
+      "name": "Test Add Already Present",
+      "setup": "",
+      "run": "./BST_Project_AutoTest/AutoTest_OutputTest.py -t test_add_already_present", 
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 10
+    },
+    {
+      "name": "Test Watch",
+      "setup": "",
+      "run": "./BST_Project_AutoTest/AutoTest_OutputTest.py -t test_watch",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 10
+    },
+    {
+      "name": "Test Delete",
+      "setup": "",
+      "run": "./BST_Project_AutoTest/AutoTest_OutputTest.py -t test_delete",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 15
+    },
+    {
+      "name": "Test Delete Not Found",
+      "setup": "",
+      "run": "./BST_Project_AutoTest/AutoTest_OutputTest.py -t test_delete_not_found",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 10
+    },
+    {
+      "name": "Test Print",
+      "setup": "",
+      "run": "./BST_Project_AutoTest/AutoTest_OutputTest.py -t test_print",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 10
+    },
+    {
+      "name": "BST Empty",
+      "setup": "",
+      "run": "./BST_Project_AutoTest/AutoTest_gtest.sh BSTTest.Empty",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 0
+    },
+    {
+      "name": "BST Search",
+      "setup": "",
+      "run": "./BST_Project_AutoTest/AutoTest_gtest.sh BSTTest.Search",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 0
+    },
+    {
+      "name": "BST Search Not Found",
+      "setup": "",
+      "run": "./BST_Project_AutoTest/AutoTest_gtest.sh BSTTest.SearchNotFound",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 0
+    },
+    {
+      "name": "BST Search Found and Not Found",
+      "setup": "",
+      "run": "./BST_Project_AutoTest/AutoTest_gtest.sh BSTTest.SearchFoundAndNotFound",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 0
+    },
+    {
+      "name": "BST Insert",
+      "setup": "",
+      "run": "./BST_Project_AutoTest/AutoTest_gtest.sh BSTTest.Insert",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 0
+    },
+    {
+      "name": "BST Delete",
+      "setup": "",
+      "run": "./BST_Project_AutoTest/AutoTest_gtest.sh BSTTest.Delete",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 0
+    },
+    {
+      "name": "BST Inorder",
+      "setup": "",
+      "run": "./BST_Project_AutoTest/AutoTest_gtest.sh BSTTest.Inorder",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 0
+    },
+    {
+      "name": "BST Preorder",
+      "setup": "",
+      "run": "./BST_Project_AutoTest/AutoTest_gtest.sh BSTTest.Preorder",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 0
+    },
+    {
+      "name": "BST Postorder",
+      "setup": "",
+      "run": "./BST_Project_AutoTest/AutoTest_gtest.sh BSTTest.Postorder",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 0
+    },
+    {
+      "name": "BST RemoveException",
+      "setup": "",
+      "run": "./BST_Project_AutoTest/AutoTest_gtest.sh BSTTest.RemoveException",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 0
+    },
+    {
+      "name": "BST InsertException",
+      "setup": "",
+      "run": "./BST_Project_AutoTest/AutoTest_gtest.sh BSTTest.InsertException",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 0
+    }
+  ]
+}

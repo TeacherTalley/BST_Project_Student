@@ -1,0 +1,26 @@
+
+#Project specific
+movie*updated.txt 
+
+# Visual Studio Code (Windows)
+/.DS_Store
+*.exe
+*.ilk
+*.obj
+*.pdb
+*.dSYM
+*.sln
+*.vcxproj
+x64
+.vs
+
+# VS Code
+.vscode
+Info.plist*
+
+# Build files
+/build
+*AutoTest*
+main
+
+
