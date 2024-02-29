@@ -60,10 +60,9 @@ const std::string msg_movie_list_empty = "Your movie list is empty.";
 // Errors
 const std::string error_file_open = "Error: Unable to open file: ";
 const std::string error_invalid_command = "Invalid command.  Please try again.";
-```  
-  
+```
 #### Example of BearFlix 
-Below are some examples of running the BearFlix application. Please use this as your guide for implementing all commands.
+See the examples below as a guide for implementing BearFlix commands.
 ![Image of BearFlix](BST_Project_Example.png)
 ![Image of BearFlix 2](BST_Project_Example2.png)
 
