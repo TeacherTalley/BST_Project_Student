@@ -11,6 +11,8 @@
  * - insert: Inserts a value into a BST
  * - remove: Removes a value from a BST
  * - inorder: Inorder traversal of a BST -- output the data values
+ * - findMin: Find the minimum value in a BST
+ * - findMax: Find the maximum value in a BST
  * - graph: Output a graphical representation of a BST
  * 
  * Private utility helper operations include:
@@ -124,6 +126,20 @@ public:
      * @param separator String to separate elements (optional).
      */
     void postorder(std::ostream &out, std::string separator = "  ");
+
+    /**
+     * Finds the minimum value in the binary search tree.
+     * @return The minimum value in the binary search tree.
+     * @throws std::runtime_error if tree is empty.
+     */
+    DataType &findMin() const;
+
+    /**
+     * Finds the maximum value in the binary search tree.
+     * @return The maximum value in the binary search tree.
+     * @throws std::runtime_error if tree is empty.
+     */
+    DataType &findMax() const;
 
     /**
      * @brief Prints the graphical representation of the binary search tree.
@@ -394,7 +410,39 @@ void BST<DataType>::postorderAux(std::ostream &out,
     }
 }
 
+template <class DataType>
+DataType &BST<DataType>::findMin() const
+{
+    if (myRoot == nullptr)
+    {
+        throw std::runtime_error("Error: Tree is empty.");
+    }
 
+    BinNodePointer current = myRoot;
+    while (current->left != nullptr)
+    {
+        current = current->left;
+    }
+
+    return current->data;
+}
+
+template <class DataType>
+DataType &BST<DataType>::findMax() const
+{
+    if (myRoot == nullptr)
+    {
+        throw std::runtime_error("Error: Tree is empty.");
+    }
+
+    BinNodePointer current = myRoot;
+    while (current->right != nullptr)
+    {
+        current = current->right;
+    }
+
+    return current->data;
+}
 
 //--- Definition of graphAux()
 #include <iomanip>
