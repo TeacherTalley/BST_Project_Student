@@ -1,9 +1,9 @@
 /**
  * @file BST.h
  * @brief Declaration of class template BST.
- * 
+ *
  * This file contains the declaration of the class template BST, which represents a Binary Search Tree.
- * 
+ *
  * Basic operations include:
  * - Constructor: Constructs an empty BST
  * - empty: Checks if a BST is empty
@@ -14,12 +14,12 @@
  * - findMin: Find the minimum value in a BST
  * - findMax: Find the maximum value in a BST
  * - graph: Output a graphical representation of a BST
- * 
+ *
  * Private utility helper operations include:
  * - search2: Used by delete
  * - inorderAux: Used by inorder
  * - graphAux: Used by graph
- * 
+ *
  * Other operations described in the exercises include:
  * - destructor
  * - copy constructor
@@ -73,8 +73,18 @@ public:
     BST();
 
     /**
+     * @brief Default destructor for the BST class.
+     */
+    ~BST();
+
+    /**
+     * @brief Clears the binary search tree.
+     */
+    void clear();
+
+    /**
      * @brief Checks if the binary search tree is empty.
-     * 
+     *
      * @return true if the binary search tree is empty, false otherwise.
      */
     bool empty() const;
@@ -161,6 +171,11 @@ private:
         BinNodePointer& locptr, BinNodePointer& parent);
 
     /**
+     * @brief Recursively clears the binary search tree.
+     */
+    void clearAux(BinNodePointer subtreePtr);
+
+    /**
      * Performs an inorder traversal of the binary search tree rooted at subtreePtr
      * and outputs the elements to the specified output stream.
      *
@@ -212,6 +227,33 @@ template <typename DataType>
 inline BST<DataType>::BST()
     : myRoot(nullptr)
 {}
+
+//--- Definition of destructor
+template <typename DataType>
+BST<DataType>::~BST()
+{
+    clear();
+}
+
+//--- Definition of clear()
+template <typename DataType>
+void BST<DataType>::clear()
+{
+    clearAux(myRoot);
+    myRoot = nullptr;
+}
+
+//--- Definition of clearAux()
+template <typename DataType>
+void BST<DataType>::clearAux(BinNodePointer subtreePtr)
+{
+    if (subtreePtr != nullptr)
+    {
+        clearAux(subtreePtr->left);
+        clearAux(subtreePtr->right);
+        delete subtreePtr;
+    }
+}
 
 //--- Definition of empty()
 template <typename DataType>
@@ -338,6 +380,40 @@ inline void BST<DataType>::postorder(std::ostream &out, std::string separator)
     postorderAux(out, myRoot, separator);
 }
 
+template <class DataType>
+DataType &BST<DataType>::findMin() const
+{
+    if (myRoot == nullptr)
+    {
+        throw std::runtime_error("Error: Tree is empty.");
+    }
+
+    BinNodePointer current = myRoot;
+    while (current->left != nullptr)
+    {
+        current = current->left;
+    }
+
+    return current->data;
+}
+
+template <class DataType>
+DataType &BST<DataType>::findMax() const
+{
+    if (myRoot == nullptr)
+    {
+        throw std::runtime_error("Error: Tree is empty.");
+    }
+
+    BinNodePointer current = myRoot;
+    while (current->right != nullptr)
+    {
+        current = current->right;
+    }
+
+    return current->data;
+}
+
 //--- Definition of graph()
 template <class DataType>
 inline void BST<DataType>::graph(std::ostream &out)
@@ -410,39 +486,7 @@ void BST<DataType>::postorderAux(std::ostream &out,
     }
 }
 
-template <class DataType>
-DataType &BST<DataType>::findMin() const
-{
-    if (myRoot == nullptr)
-    {
-        throw std::runtime_error("Error: Tree is empty.");
-    }
 
-    BinNodePointer current = myRoot;
-    while (current->left != nullptr)
-    {
-        current = current->left;
-    }
-
-    return current->data;
-}
-
-template <class DataType>
-DataType &BST<DataType>::findMax() const
-{
-    if (myRoot == nullptr)
-    {
-        throw std::runtime_error("Error: Tree is empty.");
-    }
-
-    BinNodePointer current = myRoot;
-    while (current->right != nullptr)
-    {
-        current = current->right;
-    }
-
-    return current->data;
-}
 
 //--- Definition of graphAux()
 #include <iomanip>
